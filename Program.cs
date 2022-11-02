@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cse21001
+namespace hilo
 {
     public class Program{
         public static void Main(string[] args)
