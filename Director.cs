@@ -1,3 +1,5 @@
+using System;
+
 class Director
 {
     public void StartGame()
@@ -15,7 +17,10 @@ class Director
     }
     public void DoUpdates()
     {
-        
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
     }
     public void DoOutputs()
     {
