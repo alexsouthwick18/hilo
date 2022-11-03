@@ -16,6 +16,7 @@ class Director
     {
         Console.Write("Is the next card going to be Higher or Lower? ");
         string response = Console.ReadLine();
+        keepPlaying = (response == "y");
     }
     public void DoUpdates()
     {
