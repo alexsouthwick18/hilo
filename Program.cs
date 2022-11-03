@@ -1,11 +1,15 @@
 ﻿using System;
 
-namespace hilo
+namespace Hilo
 {
-    public class Program{
-        public static void Main(string[] args)
+    class Program
+    {
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+
+            // Wait before closing
+            Console.ReadKey();
         }
     }
 }
