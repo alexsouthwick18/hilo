@@ -12,11 +12,3 @@ namespace Hilo
         }
     }
 }
-
-
-
-            // Wait before closing
-            Console.ReadKey();
-        }
-    }
-}
