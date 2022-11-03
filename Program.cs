@@ -6,7 +6,7 @@ namespace Hilo
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Hello World!");
 
             // Wait before closing
             Console.ReadKey();
