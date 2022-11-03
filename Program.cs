@@ -8,7 +8,6 @@ namespace Hilo
         {
             Director director = new Director();
             director.StartGame();
-
         }
     }
 }
