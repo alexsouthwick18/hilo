@@ -40,5 +40,8 @@ class Director
     public void DoOutputs()
     {
         
+        
+        if (score == 0)
+            keepPlaying = false;
     }
 }
