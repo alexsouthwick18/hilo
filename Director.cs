@@ -23,6 +23,14 @@ class Director
     }
     public void DoUpdates()
     {
+        Random numberGen = new Random();
+
+        int card = 0;
+
+        while (card == 0) {
+            card = numberGen.Next(1,14);
+            Console.WriteLine();
+        }
 
     }
     public void DoOutputs()
