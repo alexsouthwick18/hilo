@@ -25,6 +25,7 @@ class Director
         Console.Write("\nIs the next card going to be Higher or Lower? (H/L) ");
         string response = Console.ReadLine();
     }
+    
     public void DoUpdates()
     {
         Random numberGen = new Random();
