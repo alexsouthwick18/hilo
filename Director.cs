@@ -15,11 +15,12 @@ class Director
     }
     Deck deck = new Deck();
     public void GetInputs()
-    {
-        
-        Console.Write("Is the next card going to be Higher or Lower? ");
+    {   
+        Random numberGen = new Random();
+        int firstCard = numberGen.Next(1,14);
+        Console.Write(firstCard);
+        Console.Write("\nIs the next card going to be Higher or Lower? ");
         string response = Console.ReadLine();
-
     }
     public void DoUpdates()
     {
