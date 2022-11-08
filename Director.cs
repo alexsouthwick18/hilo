@@ -2,13 +2,17 @@ using System;
 
 
 class Director
-{
+{ 
+    private String _response;
+    private int _firstCard;
+
     bool keepPlaying = true;
     public void StartGame()
     {
+        
         Random numberGen = new Random();
-        int firstCard = numberGen.Next(1,14);
-        Console.Write(firstCard);
+        _firstCard = numberGen.Next(1,14);
+        Console.Write(_firstCard);
         while (keepPlaying)
         {
             
@@ -19,11 +23,12 @@ class Director
     }
     Deck deck = new Deck();
     public int score = 300;
+
     public void GetInputs()
     {   
         
         Console.Write("\nIs the next card going to be Higher or Lower? (H/L) ");
-        string response = Console.ReadLine();
+        _response = Console.ReadLine();
     }
     
     public void DoUpdates()
@@ -33,10 +38,47 @@ class Director
         int card = 0;
 
         while (card == 0) {
+
             card = numberGen.Next(1,14);
+
             Console.WriteLine(card);
         }
+        
+        if(_response == "H")
+        {
+            if (card > _firstCard)
+            {
+                score += 100;
 
+                Console.WriteLine($"You guessed right 100 points added to score. \n your score is {score} ");
+            }
+        
+            else if (card < _firstCard)    
+            {
+                score -= 100;
+
+                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \n your score is {score}");
+            }
+        }
+        if(_response == "L")
+        {
+             if (card > _firstCard)
+            {
+                score -= 100;
+
+                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \n your score is {score}");
+            }
+        
+            else if (card < _firstCard)    
+            {
+                score += 100;
+                Console.WriteLine($"You guessed right 100 points added to score. \n your score is {score} ");
+
+            }
+        }
+
+
+     
     }
     public void DoOutputs()
     {
