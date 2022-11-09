@@ -9,7 +9,7 @@ Team Members:
 Gunner White
 Brendan Willis: brendanwillis@me.conm
 Nimrod Huaira Reyna: hua16003@byui.edu
-Alex Southwick
+Alex Southwick: alexsouthwick18@byui.edu
 
 
 Root 
