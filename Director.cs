@@ -5,14 +5,15 @@ class Director
 { 
     private String _response;
     private int _firstCard;
-
+    int oldCard = 0;
     bool keepPlaying = true;
+    bool hasStarted = true;
     public void StartGame()
     {
         
         Random numberGen = new Random();
         _firstCard = numberGen.Next(1,14);
-        Console.Write(_firstCard);
+        Console.Write($"Card: {_firstCard}\n");
         while (keepPlaying)
         {
             
@@ -26,69 +27,72 @@ class Director
 
     public void GetInputs()
     {   
-        
+
         Console.Write("\nIs the next card going to be Higher or Lower? (H/L) ");
         _response = Console.ReadLine();
     }
     
     public void DoUpdates()
     {
-        Random numberGen = new Random();
-
+        
         int card = 0;
-
-        while (card == 0) {
-
-            card = numberGen.Next(1,14);
-
-            Console.WriteLine(card);
+        if (hasStarted)
+        {
+            oldCard = _firstCard;
         }
+        ///prevent to have an equal card to the old
+        do{
+            Random numberGen = new Random();
+            card = numberGen.Next(1,14);
+        }while(card==oldCard);
+
+        Console.WriteLine($"card: {oldCard} --> next card: {card}");
+        
         
         if(_response == "H")
         {
-            if (card > _firstCard)
+            if (card > oldCard)
             {
                 score += 100;
 
-                Console.WriteLine($"You guessed right 100 points added to score. \n your score is {score} ");
-                _firstCard = card;
+                Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
             }
         
-            else if (card < _firstCard)    
+            else if (card < oldCard)    
             {
                 score -= 100;
 
-                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \n your score is {score}");
-                _firstCard = card;
+                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
             }
         }
         if(_response == "L")
         {
-             if (card > _firstCard)
+             if (card > oldCard)
             {
                 score -= 100;
 
-                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \n your score is {score}");
-                _firstCard = card;
+                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
             }
         
-            else if (card < _firstCard) 
+            else if (card < oldCard)    
             {
                 score += 100;
-                Console.WriteLine($"You guessed right 100 points added to score. \n your score is {score} ");
-                _firstCard = card;
+                Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
+
             }
-        }
-        if (score <= 0)
-        {
-            keepPlaying = false;
+
+            
         }
 
-
+        oldCard = card;
      
     }
     public void DoOutputs()
     {
-        
+        hasStarted = false;
+        if (score == 0){
+            keepPlaying = false;
+            Console.WriteLine($"Game Over");
+        }
     }
 }
