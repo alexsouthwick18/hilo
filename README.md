@@ -6,7 +6,7 @@ Required software:
 VCS Code (to run the program)
 
 Team Members:
-Gunner White
+Gunner White: gunnerwhite00@gmail.com / whi20084@byui.edu
 Brendan Willis
 Nimrod Huaira Reyna
 Alex Southwick
