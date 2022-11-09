@@ -6,7 +6,7 @@ Required software:
 VCS Code (to run the program)
 
 Team Members:
-Gunner White
+Gunner White: gunnerwhite00@gmail.com
 Brendan Willis: brendanwillis@me.conm
 Nimrod Huaira Reyna
 Alex Southwick
