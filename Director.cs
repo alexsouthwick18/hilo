@@ -48,7 +48,7 @@ class Director
             card = numberGen.Next(1,14);
         }while(card==oldCard);
 
-        //rewrites the old card to a new card to avoid comparing each game to the first drawn card
+        //compares old card with new card
         Console.WriteLine($"card: {oldCard} --> next card: {card}");
         
         //Logic for determining if guess is higher or lower than the drawn card 
@@ -58,32 +58,31 @@ class Director
             {
                 score += 100;
 
-                Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
+                Console.WriteLine($"You guessed right! 100 points added to score. \nscore:{score} ");
             }
         
             else if (card < oldCard)    
             {
-                score -= 100;
+                score -= 75;
 
-                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
+                Console.WriteLine($"You guessed wrong. 100 points subtracted from score. \nscore:{score}");
             }
         }
         if(_response == "L")
         {
              if (card > oldCard)
             {
-                score -= 100;
+                score -= 75;
 
-                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
+                Console.WriteLine($"You guessed wrong. 100 points subtracted from score. \nscore:{score}");
             }
         
             else if (card < oldCard)    
             {
                 score += 100;
-                Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
+                Console.WriteLine($"You guessed right! 100 points added to score. \nscore:{score} ");
 
             }
-
             
         }
 
@@ -91,11 +90,21 @@ class Director
      
     }
     public void DoOutputs()
-    {   //Game over logic
+    {
+        Console.Write("Do you want to keep playing? (Y/N)");
+        string continuePlaying = Console.ReadLine();
+        if (continuePlaying == "N")
+        {
+            keepPlaying = false;
+        }
+        else if (continuePlaying == "Y")
+        {
+            keepPlaying = true;
+        }
         hasStarted = false;
         if (score == 0){
             keepPlaying = false;
-            Console.WriteLine($"Game Over");
+            Console.WriteLine($"Game Over. Thanks for playing!");
         }
     }
 }
