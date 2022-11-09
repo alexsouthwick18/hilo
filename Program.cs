@@ -6,6 +6,7 @@ namespace Hilo
     {
         static void Main(string[] args)
         {
+            //our main 
             Director director = new Director();
             director.StartGame();
         }
