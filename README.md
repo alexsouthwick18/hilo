@@ -8,7 +8,7 @@ VCS Code (to run the program)
 Team Members:
 Gunner White
 Brendan Willis: brendanwillis@me.conm
-Nimrod Huaira Reyna
+Nimrod Huaira Reyna: hua16003@byui.edu
 Alex Southwick
 
 
