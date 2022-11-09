@@ -48,7 +48,7 @@ class Director
             card = numberGen.Next(1,14);
         }while(card==oldCard);
 
-        //rewrites the old card to a new card to avoid comparing each game to the first drawn card
+        //compares old card with new card
         Console.WriteLine($"card: {oldCard} --> next card: {card}");
         
         //Logic for determining if guess is higher or lower than the drawn card 
