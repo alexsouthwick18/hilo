@@ -7,6 +7,6 @@ VCS Code (to run the program)
 
 Team Members:
 Gunner White
-Brendan Willis
+Brendan Willis: brendanwillis@me.conm
 Nimrod Huaira Reyna
 Alex Southwick
