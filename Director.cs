@@ -91,6 +91,16 @@ class Director
     }
     public void DoOutputs()
     {
+        Console.Write("Do you want to keep playing? (Y/N)");
+        string continuePlaying = Console.ReadLine();
+        if (continuePlaying == "N")
+        {
+            keepPlaying = false;
+        }
+        else if (continuePlaying == "Y")
+        {
+            keepPlaying = true;
+        }
         hasStarted = false;
         if (score == 0){
             keepPlaying = false;
