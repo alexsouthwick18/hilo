@@ -55,14 +55,14 @@ class Director
             {
                 score += 100;
 
-                Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
+                Console.WriteLine($"You guessed right! 100 points added to score. \nscore:{score} ");
             }
         
             else if (card < oldCard)    
             {
                 score -= 100;
 
-                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
+                Console.WriteLine($"You guessed wrong. 100 points subtracted from score. \nscore:{score}");
             }
         }
         if(_response == "L")
@@ -71,13 +71,13 @@ class Director
             {
                 score -= 100;
 
-                Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
+                Console.WriteLine($"You guessed wrong. 100 points subtracted from score. \nscore:{score}");
             }
         
             else if (card < oldCard)    
             {
                 score += 100;
-                Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
+                Console.WriteLine($"You guessed right! 100 points added to score. \nscore:{score} ");
 
             }
 
@@ -92,7 +92,7 @@ class Director
         hasStarted = false;
         if (score == 0){
             keepPlaying = false;
-            Console.WriteLine($"Game Over");
+            Console.WriteLine($"Game Over. Thanks for playing!");
         }
     }
 }
