@@ -60,7 +60,7 @@ class Director
         
             else if (card < oldCard)    
             {
-                score -= 100;
+                score -= 75;
 
                 Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
             }
@@ -69,7 +69,7 @@ class Director
         {
              if (card > oldCard)
             {
-                score -= 100;
+                score -= 75;
 
                 Console.WriteLine($"You guessed wrong 100 points subtracted to score. \nscore:{score}");
             }
@@ -80,7 +80,6 @@ class Director
                 Console.WriteLine($"You guessed right 100 points added to score. \nscore:{score} ");
 
             }
-
             
         }
 
@@ -89,6 +88,16 @@ class Director
     }
     public void DoOutputs()
     {
+        Console.Write("Do you want to keep playing? (Y/N)");
+        string continuePlaying = Console.ReadLine();
+        if (continuePlaying == "N")
+        {
+            keepPlaying = false;
+        }
+        else if (continuePlaying == "Y")
+        {
+            keepPlaying = true;
+        }
         hasStarted = false;
         if (score == 0){
             keepPlaying = false;
